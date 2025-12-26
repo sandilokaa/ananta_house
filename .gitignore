@@ -1,0 +1,75 @@
+############################
+# OS & Editor
+############################
+.DS_Store
+Thumbs.db
+*.swp
+*.log
+*.tmp
+
+############################
+# IDE
+############################
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+############################
+# Dart / Flutter
+############################
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+coverage/
+
+############################
+# Android
+############################
+android/.gradle/
+android/local.properties
+android/key.properties
+android/**/build/
+android/app/debug/
+android/app/profile/
+android/app/release/
+
+############################
+# iOS
+############################
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/App.framework
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Flutter/.last_build_id
+ios/Runner/GeneratedPluginRegistrant.*
+
+############################
+# Fastlane
+############################
+ios/fastlane/report.xml
+ios/fastlane/Preview.html
+ios/fastlane/screenshots
+ios/fastlane/test_output
+
+############################
+# Obfuscation & Symbols
+############################
+app.*.symbols
+app.*.map.json
+
+############################
+# Misc
+############################
+*.class
+*.pyc
+.history
+.svn/
+.swiftpm/
