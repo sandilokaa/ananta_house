@@ -20,7 +20,7 @@ class PrimaryButton extends StatelessWidget {
     required this.text,
     required this.onPressed,
     this.backgroundColor = Colors.white,
-    this.foregroundColor = Colors.black,
+    this.foregroundColor = const Color(0xFF1E1E1E),
     this.height = 60,
     this.borderRadius = 12,
     this.fontSize = 16,
@@ -37,6 +37,7 @@ class PrimaryButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
+          elevation: 0,
           backgroundColor: backgroundColor,
           foregroundColor: foregroundColor,
           padding: padding,
