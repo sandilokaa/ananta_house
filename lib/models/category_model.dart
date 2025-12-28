@@ -4,7 +4,7 @@ class Category {
   Category({required this.name});
 }
 
-var categories = [
+final categories = [
   Category(name: 'Any Type'),
   Category(name: 'Rent'),
   Category(name: 'Sell'),
