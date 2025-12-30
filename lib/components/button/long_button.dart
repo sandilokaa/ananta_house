@@ -41,7 +41,11 @@ class LongButton extends StatelessWidget {
           child: Center(
             child: Text(
               text,
-              style: TextStyle(fontSize: 12, fontWeight: FontWeight.w600),
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: FontWeight.w600,
+                fontFamily: 'Montserrat',
+              ),
             ),
           ),
         ),

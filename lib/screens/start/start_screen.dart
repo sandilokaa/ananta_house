@@ -1,6 +1,5 @@
 import 'package:ananta_house/screens/list/list_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:lucide_icons/lucide_icons.dart';
 import '../../components/button/primary_button.dart';
 
 class StartScreen extends StatelessWidget {
@@ -31,14 +30,10 @@ class StartScreen extends StatelessWidget {
                       'HOSE',
                       style: TextStyle(
                         fontSize: 20,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w700,
                         color: Colors.white,
+                        fontFamily: 'Montserrat',
                       ),
-                    ),
-                    Icon(
-                      LucideIcons.alignJustify,
-                      color: Colors.white,
-                      size: 24,
                     ),
                   ],
                 ),
@@ -49,8 +44,9 @@ class StartScreen extends StatelessWidget {
                   'FIND YOUR DREAM HOME',
                   style: TextStyle(
                     fontSize: 52,
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w800,
                     color: Colors.white,
+                    fontFamily: 'Montserrat',
                   ),
                 ),
 
@@ -59,7 +55,12 @@ class StartScreen extends StatelessWidget {
                 Text(
                   textAlign: TextAlign.center,
                   'Explore the best property listings with trusted information, transparent pricing, and a smooth buying experience.',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.white,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
 
                 SizedBox(height: 20),
@@ -67,6 +68,7 @@ class StartScreen extends StatelessWidget {
                 PrimaryButton(
                   text: 'Get Started',
                   foregroundColor: const Color(0xFF1E1E1E),
+                  fontWeight: FontWeight.w600,
                   borderRadius: 40,
                   onPressed: () {
                     Navigator.push(

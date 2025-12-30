@@ -16,6 +16,7 @@ class HeaderSection extends StatelessWidget {
             fontSize: 24,
             fontWeight: FontWeight.w700,
             color: Color(0xFF1E1E1E),
+            fontFamily: 'Montserrat',
           ),
         ),
         Row(

@@ -57,6 +57,7 @@ class PrimaryButton extends StatelessWidget {
                   fontSize: fontSize,
                   fontWeight: fontWeight,
                   color: foregroundColor,
+                  fontFamily: 'Montserrat',
                 ),
               ),
 

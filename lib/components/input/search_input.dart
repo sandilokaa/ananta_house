@@ -33,6 +33,7 @@ class SearchInput extends StatelessWidget {
           color: Color(0xFF9E9E9E),
           fontSize: 14,
           fontWeight: FontWeight.w500,
+          fontFamily: 'Montserrat',
         ),
         prefixIcon: Padding(
           padding: const EdgeInsets.only(left: 14, right: 12),
