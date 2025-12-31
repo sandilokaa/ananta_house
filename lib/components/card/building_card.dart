@@ -1,5 +1,6 @@
 import 'package:ananta_house/components/badge/card_badge.dart';
 import 'package:ananta_house/models/list_item_model.dart';
+import 'package:ananta_house/screens/detail/detail_screen.dart';
 import 'package:ananta_house/utils/money_currency.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
@@ -16,12 +17,7 @@ class BuildingCard extends StatelessWidget {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) {
-              return Scaffold(
-                appBar: AppBar(title: Text(building.name)),
-                body: const Center(child: Text('Detail Page')),
-              );
-            },
+            builder: (context) => DetailBuilding(building: building),
           ),
         );
       },
