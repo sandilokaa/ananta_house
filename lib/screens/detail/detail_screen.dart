@@ -1,5 +1,7 @@
+import 'package:ananta_house/components/badge/detail_badge.dart';
 import 'package:ananta_house/components/button/circle_button.dart';
 import 'package:ananta_house/components/button/long_button.dart';
+import 'package:ananta_house/components/map/map_wrapped.dart';
 import 'package:ananta_house/models/list_item_model.dart';
 import 'package:ananta_house/utils/money_currency.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +20,20 @@ class DetailBuilding extends StatelessWidget {
           children: <Widget>[
             Stack(
               children: <Widget>[
-                // Image.asset(building.imageAsset),
+                ClipRRect(
+                  borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(16),
+                    bottomRight: Radius.circular(16),
+                  ),
+                  child: SizedBox(
+                    height: 370,
+                    width: double.infinity,
+                    child: Image.network(
+                      building.imageAsset,
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
                 SafeArea(
                   child: Padding(
                     padding: const EdgeInsets.all(20),
@@ -31,15 +46,6 @@ class DetailBuilding extends StatelessWidget {
                           },
                           child: const Icon(LucideIcons.chevronLeft),
                         ),
-                        Text(
-                          'Property Detail',
-                          style: TextStyle(
-                            fontSize: 20,
-                            fontWeight: FontWeight.w600,
-                            color: Color(0xFF1E1E1E),
-                            fontFamily: 'Montserrat',
-                          ),
-                        ),
                         CircleButton(
                           onTap: () {},
                           child: const Icon(LucideIcons.heart),
@@ -50,6 +56,7 @@ class DetailBuilding extends StatelessWidget {
                 ),
               ],
             ),
+            SizedBox(height: 24),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -62,7 +69,7 @@ class DetailBuilding extends StatelessWidget {
                         building.name,
                         style: TextStyle(
                           fontSize: 16,
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w600,
                           color: Color(0xFF1E1E1E),
                           fontFamily: 'Montserrat',
                         ),
@@ -99,6 +106,43 @@ class DetailBuilding extends StatelessWidget {
                       ),
                     ],
                   ),
+                  SizedBox(height: 20),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: DetailBadge(
+                          icon: Icon(LucideIcons.bedDouble, size: 20),
+                          textCount: building.beds.toString(),
+                          textSpec: 'Beds',
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: DetailBadge(
+                          icon: Icon(LucideIcons.bath, size: 20),
+                          textCount: building.baths.toString(),
+                          textSpec: 'Baths',
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: DetailBadge(
+                          icon: Icon(LucideIcons.car, size: 20),
+                          textCount: building.garages.toString(),
+                          textSpec: 'Parking',
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+                      Expanded(
+                        child: DetailBadge(
+                          icon: Icon(LucideIcons.ruler, size: 20),
+                          textCount: building.sqm.toString(),
+                          textSpec: 'Sqm',
+                        ),
+                      ),
+                    ],
+                  ),
+
                   SizedBox(height: 24),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -110,14 +154,14 @@ class DetailBuilding extends StatelessWidget {
                             'Listing Agent',
                             style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               color: Color(0xFF1E1E1E),
                               fontFamily: 'Montserrat',
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 16),
                       Row(
                         children: [
                           Expanded(
@@ -203,14 +247,21 @@ class DetailBuilding extends StatelessWidget {
                             'Location Address',
                             style: TextStyle(
                               fontSize: 16,
-                              fontWeight: FontWeight.w500,
+                              fontWeight: FontWeight.w600,
                               color: Color(0xFF1E1E1E),
                               fontFamily: 'Montserrat',
                             ),
                           ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      SizedBox(height: 16),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(12),
+                        child: MapWrapped(
+                          latitude: -6.200000,
+                          longitude: 106.816666,
+                        ),
+                      ),
                     ],
                   ),
                 ],

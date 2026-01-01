@@ -1,55 +1,64 @@
 import 'package:flutter/material.dart';
 
 class CardBadge extends StatelessWidget {
-  final String textCount;
-  final String textSpec;
+  final String? textCount;
+  final String? textSpec;
   final Color backgroundColor;
-  final Widget icon;
+  final Widget? icon;
 
   const CardBadge({
     super.key,
-    required this.textCount,
-    required this.textSpec,
+    this.textCount,
+    this.textSpec,
     this.backgroundColor = Colors.white,
-    required this.icon,
+    this.icon,
   });
 
   @override
   Widget build(BuildContext context) {
+    if (textCount == null && textSpec == null && icon == null) {
+      return const SizedBox.shrink();
+    }
+
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
         color: backgroundColor,
         borderRadius: BorderRadius.circular(40),
       ),
-      child: SizedBox(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            icon,
-            Row(
-              children: [
+      child: Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          if (icon != null) icon!,
+          if (icon != null && (textCount != null || textSpec != null))
+            const SizedBox(width: 4),
+
+          Row(
+            children: [
+              if (textCount != null)
                 Text(
-                  textCount,
-                  style: TextStyle(
+                  textCount!,
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
-                    fontFamily: 'Montserrat',
                   ),
                 ),
-                SizedBox(width: 4),
+
+              if (textCount != null && textSpec != null)
+                const SizedBox(width: 4),
+
+              if (textSpec != null)
                 Text(
-                  textSpec,
-                  style: TextStyle(
+                  textSpec!,
+                  style: const TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
-                    fontFamily: 'Montserrat',
                   ),
                 ),
-              ],
-            ),
-          ],
-        ),
+            ],
+          ),
+        ],
       ),
     );
   }

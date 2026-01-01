@@ -17,7 +17,7 @@ class BuildingSection extends StatelessWidget {
               'Best Offers',
               style: TextStyle(
                 fontSize: 16,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: Color(0xFF1E1E1E),
                 fontFamily: 'Montserrat',
               ),
@@ -26,7 +26,7 @@ class BuildingSection extends StatelessWidget {
               'See all',
               style: TextStyle(
                 fontSize: 12,
-                fontWeight: FontWeight.w500,
+                fontWeight: FontWeight.w600,
                 color: const Color(0xFFBCBCBC),
                 fontFamily: 'Montserrat',
               ),
