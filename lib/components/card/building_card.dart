@@ -140,7 +140,7 @@ class BuildingCard extends StatelessWidget {
                       Expanded(
                         child: CardBadge(
                           icon: Icon(LucideIcons.ruler, size: 16),
-                          textCount: building.garages.toString(),
+                          textCount: building.sqm.toString(),
                           textSpec: 'Sqm',
                           backgroundColor: Color(0xFFF6F6F6),
                         ),
