@@ -1,4 +1,4 @@
-import 'package:ananta_house/screens/list/list_screen.dart';
+import 'package:ananta_house/layouts/main_layout.dart';
 import 'package:flutter/material.dart';
 import '../../components/button/primary_button.dart';
 
@@ -75,7 +75,7 @@ class StartScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return ListScreen();
+                          return MainLayout();
                         },
                       ),
                     );
