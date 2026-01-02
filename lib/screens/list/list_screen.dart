@@ -40,6 +40,7 @@ class _ListScreenState extends State<ListScreen> {
       body: Stack(
         children: [
           SafeArea(
+            bottom: false,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: CustomScrollView(

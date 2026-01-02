@@ -264,6 +264,7 @@ class DetailBuilding extends StatelessWidget {
                       ),
                     ],
                   ),
+                  SizedBox(height: 24),
                 ],
               ),
             ),
