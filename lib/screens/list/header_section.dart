@@ -13,7 +13,7 @@ class HeaderSection extends StatelessWidget {
         const Text(
           'Explore',
           style: TextStyle(
-            fontSize: 24,
+            fontSize: 20,
             fontWeight: FontWeight.w700,
             color: Color(0xFF1E1E1E),
             fontFamily: 'Montserrat',
@@ -24,11 +24,12 @@ class HeaderSection extends StatelessWidget {
             CircleButton(
               badgeCount: 3,
               onTap: () {},
+              height: 40,
               child: const Icon(LucideIcons.bell),
             ),
-            const SizedBox(width: 8),
             CircleButton(
               color: Colors.black,
+              height: 40,
               child: ClipOval(
                 child: Image.network('https://i.pravatar.cc/150'),
               ),
