@@ -70,9 +70,11 @@ class _ListScreenState extends State<ListScreen> {
                 ),
                 child: Container(
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: Colors.white.withOpacity(0.7 * blurOpacity),
                     border: Border(
                       bottom: BorderSide(
+                        // ignore: deprecated_member_use
                         color: Colors.grey.withOpacity(0.2 * blurOpacity),
                         width: 1,
                       ),
