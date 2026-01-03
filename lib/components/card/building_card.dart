@@ -3,6 +3,7 @@ import 'package:ananta_house/extension/property_type_ui.dart';
 import 'package:ananta_house/models/list_item_model.dart';
 import 'package:ananta_house/screens/detail/detail_screen.dart';
 import 'package:ananta_house/utils/money_currency.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -34,28 +35,14 @@ class BuildingCard extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(16)),
               child: Stack(
                 children: [
-                  Image.network(
-                    building.imageAsset.isNotEmpty
-                        ? building.imageAsset
-                        : 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2950&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-                    height: 234,
-                    width: double.infinity,
+                  CachedNetworkImage(
+                    imageUrl: building.imageAsset,
                     fit: BoxFit.cover,
-                    loadingBuilder: (context, child, loadingProgress) {
-                      if (loadingProgress == null) return child;
-
-                      return SizedBox(
-                        height: 234,
-                        child: Center(
-                          child: CircularProgressIndicator(
-                            strokeWidth: 2,
-                            valueColor: AlwaysStoppedAnimation<Color>(
-                              Colors.grey.shade400,
-                            ),
-                          ),
-                        ),
-                      );
-                    },
+                    placeholder: (context, url) => const Center(
+                      child: CircularProgressIndicator(strokeWidth: 2),
+                    ),
+                    errorWidget: (context, url, error) =>
+                        const Icon(Icons.person, color: Colors.white),
                   ),
 
                   Positioned(

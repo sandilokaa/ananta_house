@@ -4,6 +4,7 @@ import 'package:ananta_house/components/button/long_button.dart';
 import 'package:ananta_house/components/map/map_wrapped.dart';
 import 'package:ananta_house/models/list_item_model.dart';
 import 'package:ananta_house/utils/money_currency.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -28,9 +29,14 @@ class DetailBuilding extends StatelessWidget {
                   child: SizedBox(
                     height: 370,
                     width: double.infinity,
-                    child: Image.network(
-                      building.imageAsset,
+                    child: CachedNetworkImage(
+                      imageUrl: building.imageAsset,
                       fit: BoxFit.cover,
+                      placeholder: (context, url) => const Center(
+                        child: CircularProgressIndicator(strokeWidth: 2),
+                      ),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.person, color: Colors.white),
                     ),
                   ),
                 ),
@@ -186,8 +192,23 @@ class DetailBuilding extends StatelessWidget {
                                         height: 50,
                                         color: Colors.black,
                                         child: ClipOval(
-                                          child: Image.network(
-                                            'https://i.pravatar.cc/150',
+                                          child: CachedNetworkImage(
+                                            imageUrl:
+                                                'https://i.pravatar.cc/150',
+                                            fit: BoxFit.cover,
+                                            placeholder: (context, url) =>
+                                                const Center(
+                                                  child:
+                                                      CircularProgressIndicator(
+                                                        strokeWidth: 2,
+                                                      ),
+                                                ),
+                                            errorWidget:
+                                                (context, url, error) =>
+                                                    const Icon(
+                                                      Icons.person,
+                                                      color: Colors.white,
+                                                    ),
                                           ),
                                         ),
                                         onTap: () {},

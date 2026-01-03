@@ -1,4 +1,5 @@
 import 'package:ananta_house/components/button/circle_button.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:lucide_icons/lucide_icons.dart';
 
@@ -31,7 +32,15 @@ class HeaderSection extends StatelessWidget {
               color: Colors.black,
               height: 40,
               child: ClipOval(
-                child: Image.network('https://i.pravatar.cc/150'),
+                child: CachedNetworkImage(
+                  imageUrl: 'https://i.pravatar.cc/150',
+                  fit: BoxFit.cover,
+                  placeholder: (context, url) => const Center(
+                    child: CircularProgressIndicator(strokeWidth: 2),
+                  ),
+                  errorWidget: (context, url, error) =>
+                      const Icon(Icons.person, color: Colors.white),
+                ),
               ),
               onTap: () {},
             ),

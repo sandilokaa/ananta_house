@@ -29,7 +29,9 @@ class _MainLayoutState extends State<MainLayout> {
             child: FloatingBottomBar(
               currentIndex: _currentIndex,
               onTap: (index) {
-                setState(() => _currentIndex = index);
+                if (index < _pages.length) {
+                  setState(() => _currentIndex = index);
+                }
               },
             ),
           ),
